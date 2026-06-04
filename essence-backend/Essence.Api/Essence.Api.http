@@ -1,0 +1,6 @@
+@Essence.Api_HostAddress = http://localhost:5239
+
+GET {{Essence.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Essence.Api/Essence.Api.csproj" />
+  <Project Path="Essence.Application/Essence.Application.csproj" />
+  <Project Path="Essence.Core/Essence.Core.csproj" />
+  <Project Path="Essence.Infrastructure/Essence.Infrastructure.csproj" />
+</Solution>

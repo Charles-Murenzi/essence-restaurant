@@ -1,0 +1,31 @@
+services:
+  essence-db:
+    image: postgres:latest
+    container_name: essence-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: essence_db
+    ports:
+      - "5432:5432"
+
+  essence-api:
+    build:
+      context: ./essence-backend
+      dockerfile: Essence.Api/Dockerfile
+    container_name: essence-api
+    depends_on:
+      - essence-db
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=essence-db;Database=essence_db;Username=postgres;Password=your_password"
+    ports:
+      - "5000:80"
+
+  essence-frontend:
+    build:
+      context: ./essence-frontend
+    container_name: essence-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:5000/api"

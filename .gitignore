@@ -1,0 +1,19 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Node
+essence-frontend/node_modules/
+essence-frontend/.next/
+essence-frontend/.env.local
+
+# DB
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
